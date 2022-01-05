@@ -27,9 +27,9 @@ def gcdInverseCalc(a, b):
         y = inverse - q * y
         inverse = p
 
-    if( x < 0):
-        x = x + b0           
-    return x
+    if( inverse < 0):
+        inverse = inverse + b0           
+    return inverse
      
 #computes d: the inverse of num within Z_N => e * d = N*k + 1
 def Inverse(num, N):
