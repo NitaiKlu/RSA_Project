@@ -28,8 +28,8 @@ class RSA():
             if extended_gcd(fi_N , i)[0] is 1:
                 public = i
                 break
-        private = modular_inverse(public,fi_N)
-        return RSA((N, public), (N, private))
+        private = modular_inverse(public,fi_N) 
+        return RSA((N, public), (N, private)) 
 
     def encrypt(self, m):
         """
