@@ -1,4 +1,4 @@
-import number_theory_functions
+from number_theory_functions import *
 
 class RSA():
     def __init__(self, public_key, private_key = None):
@@ -43,7 +43,7 @@ class RSA():
         -------
         c : The encrypted ciphertext
         """
-        return modular_exponent(c, self.public_key[1], self.public_key[0])
+        return modular_exponent(m, self.public_key[1], self.public_key[0])
 
 
     def decrypt(self, c):
