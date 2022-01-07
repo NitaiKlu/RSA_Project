@@ -43,7 +43,8 @@ class RSA():
         -------
         c : The encrypted ciphertext
         """
-        return modular_exponent(m, self.public_key[1], self.public_key[0])
+        (N , e) = self.public_key
+        return modular_exponent(m, e, N)
 
 
     def decrypt(self, c):
@@ -58,4 +59,5 @@ class RSA():
         -------
         m : The decrypted plaintext
        """
-        return modular_exponent(c, self.private_key[1], self.private_key[0])
+        (N , d) = self.private_key
+        return modular_exponent(c, d, N)
