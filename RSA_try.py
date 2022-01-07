@@ -41,13 +41,13 @@ def Inverse(num, N):
 
 #computes: base to the power of power (mod N)
 def toPowerMod(base, power, N):
-    new_base = pow(base, small_power, N)
-    if(power % small_power == 0):
-        additional = 1
-    else:
-        additional = pow(base, power % small_power, N)
-    new_power = power / small_power
-    return toPowerMod(new_base, new_power, N) * additional
+        new_base = pow(base, small_power, N)
+        if(power % small_power == 0):
+            additional = 1
+        else:
+            additional = pow(base, power % small_power, N)
+        new_power = power / small_power
+        return toPowerMod(new_base, new_power, N) * additional
    
     
 

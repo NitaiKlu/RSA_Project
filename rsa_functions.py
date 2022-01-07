@@ -24,13 +24,12 @@ class RSA():
         q = generate_prime(digits// 2 + 1)
         N = p * q
         fi_N = (p-1) * (q-1)
-        for i in range(fi_N):
-            if extended_gcd(fi_N , i)[0] is 1:
+        for i in range(2, fi_N):
+            if extended_gcd(fi_N, i)[0] is 1:
                 public = i
                 break
-        private = modular_inverse(public,fi_N) 
-        return RSA((N, public), (N, private)) 
-
+        private = modular_inverse(public, fi_N)
+        return RSA((N, public), (N, private))
     def encrypt(self, m):
         """
         Encrypts the plaintext m using the RSA system

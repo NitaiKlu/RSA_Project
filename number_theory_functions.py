@@ -43,7 +43,7 @@ def modular_inverse(a,n):
     -------
     x: such that (a*x % n) == 1 and 0 <= x < n if one exists, else None
     """
-    (gcd, inverse, y) = extended_gcd(a,n)
+    (gcd, x, inverse) = extended_gcd(a,n)
     if(gcd != 1):
         return 0
     return inverse%n
@@ -70,7 +70,7 @@ def modular_exponent(a, d, n):
     else:
         additional = pow(base, power % small_power, n)
     new_power = power // small_power
-    if(new_power == 1):
+    if(new_power <= 1):
         return (pow(new_base, 1, n) * additional)%n
     return (modular_exponent(new_base, new_power, n) * additional) %n
 
@@ -128,19 +128,4 @@ def generate_prime(digits):
         if is_prime(n):
             return n
     return None
-
-if __name__ == '__main__':
-    print(extended_gcd(5279, 797))
-    print(modular_exponent(123, 500, 100))
-    print(modular_exponent(123456, modular_exponent(7896543, 74365753, )))
-    counter = 0
-    rem = 0
-    num = 123456
-    hundreth_digit = 0
-    while(hundreth_digit!=5):
-        counter+=1
-        num=num*123456
-        rem = num % 1000
-        hundreth_digit = rem//100
-    print(counter)
 
