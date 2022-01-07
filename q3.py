@@ -9,6 +9,7 @@ c = 42
 #____________calculate_________________
 # N = 3491 * 3499 (primes)
 (p,q)=(3491, 3499)
+print ("q is prime: ", is_prime(q), ", p is prime: ", is_prime(p))
 print ("pq==N: ",N == p*q)
 phi = (p-1)*(q-1)
 d = modular_inverse(e, phi)
@@ -17,4 +18,4 @@ m = rsa.decrypt(c)
 print ("m is: ",m)
 
 #___________validate__________________
-print ("valid: ",c == rsa.encrypt(m))
+print ("D(M)==E(D(E(M))): ",c == rsa.encrypt(m))
